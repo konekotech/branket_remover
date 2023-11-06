@@ -55,11 +55,13 @@ public class Main {
             list.addData(str.charAt(i));
         }
         list.initializeToHead();
+        list.shift();
         //データを格納
-        for(int i = 0; i <= str.length(); i++){
-            System.out.println( list.getNow().getData());
+        for(int i = 0; i < str.length(); i++){
+            System.out.print( list.getNow().getData());
             list.shift();
         }
+        System.out.println();
         System.out.println("変換");
         list.initializeToHead();
         applyBracket(list, true);
@@ -67,8 +69,9 @@ public class Main {
         applyBracket(list, false);
         //データを格納
         list.initializeToHead();
-        for(int i = 0; i <= str.length(); i++){
-            System.out.println( list.getNow().getData());
+        list.shift();
+        for(int i = 0; i < str.length(); i++){
+            System.out.print( list.getNow().getData());
             list.shift();
         }
     }
